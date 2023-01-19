@@ -1,0 +1,184 @@
+*Why data exploration is important?
+*What questions should one answer during data exploration?
+A model will be as good as the model built.
+structured-understanding -preparing the data to build mrobust model.
+
+*Exploring target variable--
+what info does variable represent,datatype -- sale price which represents the value at which house was sold , float ,continuous numerical variable
+eyeball(skim through)- first 10 and last 10 data.,from first, 6th observation -indicates outlier.from last 4th value outlier
+mean median mode -info, describe
+missing values ,outliers,distribuution of the data
+
+*this process is called univariate analysis
+
+*Explain the outlier ,find the outlier mathematically, finding creating box and whisker plots to find oulier.
+An oulier is the data point which lies outside/Distant the usual range of rest of the values of data.
+
+*Matplotlib doesnt have the capability to ignore the missing values, so seaborn is used to create boxplots
+
+*Why does outlier occur and how it creates problem?Different ways of treating outliers and treating outliers by imputing.
+Genuine variability ,recording error
+changes the mean and gives wrong information about other data points.
+diff ways-
+deletion- deleting the entire row of outlier ,which is not advisable, as it reduces size of data set,valuable information can be loosed
+capping/imputing -updating the outlier with the mean/median/mode
+Data transformation -replace with log ,square, cuberoot value of outlier
+Binning- different bins are formed based on the different values of outliers
+
+*identify and treat missing values of target variable
+*plot histogram to see the distribution of data over the range
+
+Missing values in target variable can reduce the performance of target variablethe row with missing value can not be used  for making a model.
+deletion and imputing can be used.
+impution is avoided because model  learns from the target variable and if we impute the data that means the model  will learn from the derived data and not the true data.
+so deletion is prefered even if deletion can cause loosing of some valuable information
+
+#DATA EXPLORATION OF INDEPENDENT VARIABLES
+imputation is generally preferred as deletion will cause the shortening of our dataset.
+
+fit_transform
+two steps-
+fitting phase-this function calculates the median value with respect to every column that is passed as aparameter and stores it.
+transformation phase-this function does the actual job of imputing using the strategy to located missing values.
+
+*VARIABLE TRANSFORMATION ON INDEPENDENT VARIABLES*
+process of making changes to a variable in a way that it becomes more useful and meaningful for analysis and modelling purposes
+-for treating outliers
+-variable types need to be changed for eg- sale price doesnt changes with zipcode but in certain zipcode areas the sale price is higher so it better be represented in categorical variable
+-derivin 2 or more variables from a variable  i)whether house was ever renovated (yes or no) object (ii)and how long ago was the house renovated.
+
+CORELATION
+Explain correlation and calc correlation between two variables  and arrive at cross correlation matrix among multiple numerical variables using python
+
+measure of asssociation or dependence bw 2 variables i.e. how long does one variable change with another,how close two variables are to have a linear relationship with each other. possitive,negative,zero(no pattern), scatter plot , and denoted by r and can have any value between -1 to 1
+
+COORELATION between independent variables
+If two independent variables that are highly correlated with each other, are also correlated with the dependent variable then using both independent variables in the model may result in a suboptimal or poorly understood model.
+• The model will most likely use only one of those highly correlated variables in the equation and may consider the other variable as statistically insignificant variable.
+• Whatever 'predictive power' the 2nd variable had to explain the variation in the target variable, has already been explained by the first variable.
+• The 2nd variable does not add any incremental value to the accuracy of the model.
+
+• While selecting input variables for the model, look at correlation between independent variables.
+• If two independent variables have high correlation with each other above a certain value, make a conscious choice of which one to keep in the model.
+
+DATA EXPLORATION OF CATEGORICAL VARIABLE
+Learning Objectives:
+By the end of this topic, you will be able to:
+• List the questions one should answer while exploring categorical variables.
+• Find frequency distribution of unique values of a categorical variable.
+• Visualize relationship between numerical target variable and categorical variable with the help of bar chart.
+
+The Questions One Needs to Answer While Exploring Categorical
+Variables
+• What information does this variable contain?
+• Do the few sample values that we are able to ‘eyeball' (i.e. skim through) make sense?
+• How many and what unique values, i.e. levels, does this categorical variable have and what is the frequency distribution of those unique values?
+• How is dependent/target variable correlated with this variable.
+
+Is there a mathematical or statistical way to compute
+relationship between a categorical and a numerical variable(target)?
+• The method of finding out whether a categorical variable is having an impact on the numeric variable - ANOVA
+• However, ANOVA can not quantify the relationship between a categorical variable and a numerical variable.
+
+• ANOVA stands for Analysis of Variance.
+• It checks if the means, i.e., average value of the target variable across different levels or unique values of a categorical variable are equal or not.(by chance or actual difference?)
+• It assesses the importance of one or more levels by comparing the means of the target variable at different levels of the categorical variable.
+
+Two values that are obtained from ANOVA:
+F-value = A large value
+and p-value < 0.05  if we wish to reject the null hypothesis and accept the alternate hypothesis
+Null Hypothesis - There is no difference in means.
+Alternate Hypothesis - Means are different and the categorical variable does have an impact on target variable.
+
+If p-value < 0.05: There is less than 5% probability that the difference in means is purely a coincidence.One can be 95% or more confident that the difference in means actually exists.
+
+Two Types of ANOVA
+One-way ANOVA – It deals with one independent variable only.[this is used here because we want to observe variance of means with one independent variable wrt to categorical variable)
+Two-way ANOVA – It deals with two or more independent variables.
+
+Learning Objectives:
+By the end of this topic, you will be able to:
+• Bin and create dummy variables for a categorical variable.
+
+Creation of Dummy Variables
+• It refers to the process of transforming a categorical variable into a set of numerical or boolean variables, called dummy variables, each of which has values of 0 or 1.The number of dummy variables created for a categoricalvariable depends on the number of unique values or levels that categorical variable has.
+
+If a categorical variable has 'n' levels, then 'n-1' dummy variables are required.
+
+Why do we need dummy variables?
+Why create so many new variables when the same information is so
+easily represented by a categorical variable?
+Regression modeling requires all the independent variables to be numerical variables.
+By creating dummy variables, we transform a categorical variableinto a numerical variable.
+After creating required dummy variables for a categorical variable,categorical variable is dropped from the dataset.
+The 'get_dummies' function of Pandas library creates the dummy variables for different levels of the categorical variable and then drops it.
+
+Binning-also a data transformation technique(can be used for numerical or categorical variables)
+If the number of levels for a categorical variable is more (say > 20), then bin these levels into fewer groups before creating the dummy variables.
+
+The 'merge function' of the Pandas library is used to merge two tables.
+An identifier or a variable (key or joining parameter) which is common in both the tables is required for joining the tables.
+
+What do we mean by left join?
+• When two tables are joined based on the common key, one table will be on the left and the other will be on the right.
+• In a left join, all rows of left table will be returned along with matching fields from the other table.
+• In a right join, all elements of right table will be returned along with matching fields from the other table.
+
+
+*Splitting of Data Into Train and Test Datasets*
+Learning Objectives:
+By the end of this topic, you will be able to:
+• Separate the independent and dependent variables.
+Explain what is Train data and what is Test data and why do we need them?
+Split the dataset into Train and Test data.
+
+The 'iloc' function - To define the variables
+
+Data
+Train Dataset- To educate or train our models
+Test Dataset- To examine the model performance
+
+Learning Objectives:
+By the end of this topic, you will be able to:
+• Explain what is feature scaling?
+• List different techniques used in feature scaling.
+Apply feature scaling using Python.
+
+scaling the feature variable(independent) into the same range
+
+The variation in magnitude and range of features causes two problems:
+When the model is built, variables with higher magnitude and range will have more impact compared to the ones which are smaller.
+• The model might not predict properly since it is not giving equal weight to both the variables.
+The gradient descent algorithm that is used to find the coefficients of linear regression may take a long time to converge.
+
+Feature Scaling
+• The variables are scaled to have similar magnitude and ranges so that model is not biased towards a particular variable.
+• Feature Scaling is a must for those algorithms where some measure of distance between data points is involved like Logistic Regression,
+Linear Regression, K Nearest Neighbors, Principal Component Analysis, etc.
+• However, Feature scaling is not required for tree-based algorithms like Random Forest, Decision Trees, etc.
+
+Different Techniques of Feature Scaling
+
+Standardisation-It rescales the feature values so that they have the properties of a Standard Normal Distribution with mean as 0 and the standard deviation of 1.(range -1 to 1)
+x¹=[x - μ (mean) ]/sigma(Standard Deviation)
+
+Min Max Scaling-• One of the simplest methods for scaling
+The value range for the transformed variables lies between [0, 1]
+x=[x − min (x)]/[max (x) – min (x)]
+
+Normalization-• The range is fixed from -1 to 1
+Also called mean normalization
+x¹ =[x - mean (x)]/[max (x) − min (x)]
+
+Scaling Using Python
+• Standardisation method should be used for scaling the feature variables when a linear regression model is built.
+• A linear regression model assumes the input variables to be normally distributed.
+• The preprocessing library of sklearn can be used to do the standardisation.
+
+Feature scaling brings all the features on the same scale that will remove the bias of the model towards any variable. Also,
+bringing features on the same scale will lead to same scale calculations at the time of gradient descent that will make
+convergence faster.
+
+Tree-based models are not distance-based models and can handle varying ranges of features, so except option B all the options require feature scaling.
+Logistic/Linear regression in a linear model where feature scaling prevents the model from being biased towards any particular variable.
+

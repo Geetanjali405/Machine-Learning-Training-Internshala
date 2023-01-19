@@ -1,0 +1,24 @@
+Data is information about something.
+Variable represents one specififc characteristic of data or tells one specific information about the data under consideration
+Two types of variable - numeric and categorical
+Numeric variable are again of two types - continuous(in set of rreal numbers-eg- temp,height) and discrete(whole numbers-eg-no. of contacts,no. of calls )
+Numerical variables- Age,weightcomplexity level,body temp,blood presssure,heart rate,amount of dose given,time since patient is suffering
+Categorical variable-string(good  bad slow fast binary) ordinal(can be arranged in logical order) and nominal(colour of phone,brands)\--------eg- name gender location type of disease
+nominal-gender ,location name type
+Dependent variable
+Independent variable
+structured
+unstructured
+
+GRAPHICAL AND ANALYTICAL REPRESENTATION OF DATA
+DA proces sof studying available data and drwawing valuable insights from it,part of ml-eg-cricket saas python knime ms excel
+EDA -Exploratory data analysis - to find patterns and relationships among data variables-gives summary of dataset - descriptive statsitics and graphs
+Line-runs/no. of evers 
+Bar-same but eith bars"
+Hostogram-count freq of occurence  bar with no groups intervals
+normally Distributed data- bell shaped invclining max declining
+
+Pie- slices contributions
+scatter plot- relationship bw two variables
+box and whisker-statistical summary of numerical variable max 75 50 25 min
+time series- x axis- time  y axis - any variable that changes with time .

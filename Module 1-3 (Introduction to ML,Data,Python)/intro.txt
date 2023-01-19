@@ -1,0 +1,15 @@
+Machine learning is the ability of computers to learn and improve from their past experience and data without being explicitly programmed.
+For eg- how we learn the fastest way to our school,our brain analyses each scenario and learns from then and improves/changes the next occurences ,likewise machines also learns from past experiences identify patterns and take decisions/predict the outcome automatically.
+Applications of machine learning- 1)Facebook newsfeed 2)facebook photo autotagging feature 3)product recommendations.4)frauds in banking 5)sentimental analysis 6)chatbot 7)selfdriven cars
+How machine learning works?
+Past experiences - Data of past events -what is data? information about anything(features about smartphone ,voice call,videocall isp ,past search history)-for eg -netflix 
+A ml model derives patterns and insights from past data and applies that intelligence on the new peice of data to make predictions and decisions about it.machine learning is called pattern recognition.
+Types of machine learning-
+supervised and unsupervised data
+labelled data- if contains target/dependent variableanswering a question of interest -eg-patient was cured or not,employee is present at the work or not.
+unlabelled data-contains information about but does not have predefined target variable.
+Supervised - learns under supervision with help of labelled data identifies how target variable depends on independent variables using the past labelled data,this refers as training the data, when model is trained new unlabelled data is feed to it and then it makes predictions for target variable.
+supervised model are of two types- 
+1)classification models -target variable -category variable
+2)regression models -target variable- continuous numerical variable.
+Unsupervised learning-works on unlabelled data- used to identify patterns  households in population based on income no. of childrens.

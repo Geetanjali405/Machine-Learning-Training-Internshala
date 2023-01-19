@@ -1,0 +1,108 @@
+BUILDING FIRST PREDICTIVE MODEL WITH MEAN PREDICTION
+and visualize the mean prediction
+
+Building a model to predict the sale price of the model
+
+Dots per inches (dpi) determines how many pixels the figure comprises. The default dpi in matplotlib is 100. A figure of figsize=(w,h) will have px, py = w*dpi, h*dpi # pixels # e.g. # 6.4 inches * 100 dpi = 640 pixels.
+
+improving upon mean regression model
+mean wrt to grade of the house
+
+alternative method-residual plot-- it is scatter plot of difference of prediction and actual value.
+
+visualizing of any model and analysing the goodness of prediction
+
+Is there a mathematical way that gives us a quantifiable
+metric using which we can assess a model as well as
+compare it with other models?
+
+Model evaluation metrics
+Learning Objectives:
+
+• Define & calculate error corresponding to the mean regression model.
+• Evaluate the regression models' performance using different metrics such as -
+> Mean Absolute Error (MAE)
+Mean Square Error (MSE)
+Root Mean Square Error (RMSE)
+
+residual=individual error term
+mean error = error1+error2+..../no. of data points
+will come 0 because of cancellation of positive and negative residuals
+
+• We made regression models based on mean and visualized them.
+• We also visualized the individual errors of these models with the help of residual plots.
+• We learned about different metrics to quantify the error corresponding to our models.
+
+Assumptions of linear regression
+By the end of this topic, you will be able to:
+➤ List and explain various assumptions of linear
+regression model.
+So far we have learnt...
+• What is a linear regression model?
+• How it is represented using the equation of a line?
+• About the parameters of the line and how to find
+them manually using cost function curve?
+• How gradient descent works intuitively and
+mathematically and implemented it in Python?
+
+ASSUMPTION 1 LINEAR RELATIONSHIP
+-The target and the independent variable should have a independent rekationship between them,need not be perfect linear relation i.e. correlation=1, but should follow the fundamental property of linear regression
+Fundamental property of linear relation-Y changes with X and for every change of AX,
+the quantum of change in Y i.e. Y should be similar irrespective of value of X.
+
+if linear regression applied on non linear data-
+Large error.
+• Unreliable inferences about the data.
+• Failure of linear regression to model the pattern mathematically.
+
+Make the non-linear relationship linear by using variable transformation operations such as x², √x or log(x).
+
+ASSUMPTION 2-CONSTANT VARIATION OF ERROR(HOM0SCEDASTICITY)
+
+The variannce of error goes on increasing from left to right this is called heteroscedasticity
+Heteroscedasticity arise:
+a) because the relationship between X and Y is not linear.
+b) due to the presence of outliers.
+
+To counter Heteroscedasticity:
+• Treat outliers.
+• Transform our data, using the transformation methods such as log(x), √x, and x².
+
+ASSUMPTION 3-NORMAL DISTRIBUTION OF ERRORS
+when all the errors are plotted they should represent a bell curve
+
+Errors which do not follow the normal distribution:
+• Cause parameter estimations to be unstable
+• Result in misleading coefficients
+
+To counter the problem:
+Scale the data to a linear scale using a suitabletransformation such as log(x), √x, and x
+
+4.NO CORRELATION BETWEEN ERROR TERMS
+correlation can be seen in time series also
+
+• Extreme correlation among the error terms.
+• Looking at the magnitude and the sign of any error term, we canclearly get an idea about the next error term.
+
+A definite unexplained pattern in the Y variable that shows up in the errors.
+Current Value Depends upon Previous Values
+
+Correlation among errors results in misinterpretation of the model outcome.
+
+5.MULTICOLLINEARITY
+
+Correlation > 0.5
+One of the two independent variables is eliminated.
+
+Multicollinearity among independent variables must be removed.
+
+variance inflation factor(vif)-VIF is used for:
+• Diagnosing collinearity/multicollinearity.Quantifying correlation between twoindependent variables.
+Higher the VIF value associated with any independent variable, more correlated this variable is with all other independent variables put together.
+
+A lower VIF - The independent variable is not
+correlated with other independent variables. vif 1/1-r2
+
+vif=5 a good threshold
+VIF > 5 The independent variable is very well explained by the other independentvariables and therefore can be removed.
+
